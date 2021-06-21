@@ -38,6 +38,7 @@ class CategoriesHome extends StatelessWidget {
     // List<String> titleName=[""];
     return Expanded(
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         itemBuilder: (context, index) => CategoriesModel(
@@ -49,7 +50,7 @@ class CategoriesHome extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => BodyBreakFast(
+                  builder: (context) => ListingCatHome(
                     titleName: "Breakfast",
                     appBarColor: colorVal[index] == null ? sPrimaryColor : colorVal[index],
                   ),

@@ -12,14 +12,23 @@ class CardViewListingCat extends StatelessWidget {
     required this.titleBFName,
     required this.makeName,
     required this.randomNum,
+    required this.imgData,
+    required this.prepTime,
+    required this.jbLevel,
+    required this.calData,
   }) : super(key: key);
 
   final String titleBFName;
   final String makeName;
+  final String imgData;
+  final String prepTime;
+  final String jbLevel;
+  final String calData;
   final int randomNum;
 
   @override
   Widget build(BuildContext context) {
+    // String st="assets/images/carrot_cake.jpg";
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: sPadding / 2, vertical: 8),
       padding: const EdgeInsets.symmetric(horizontal: sPadding / 2, vertical: sPadding),
@@ -41,12 +50,12 @@ class CardViewListingCat extends StatelessWidget {
         children: [
           Container(
             width: 140,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/carrot_cake.jpg"),
+                image: NetworkImage(imgData),
                 fit: BoxFit.cover,
               ),
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(10),
               ),
             ),
@@ -72,7 +81,7 @@ class CardViewListingCat extends StatelessWidget {
                             ),
                       ),
                       TextSpan(
-                        text: "\n\n$makeName",
+                        text: "\n\nBy $makeName",
                         style: Theme.of(context).textTheme.bodyText2!.copyWith(
                               color: Colors.black54,
                               fontSize: 14,
@@ -97,7 +106,7 @@ class CardViewListingCat extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                            text: " 55 min",
+                            text: prepTime,
                             style: Theme.of(context).textTheme.headline6!.copyWith(
                                   color: Colors.black54,
                                   fontSize: 16,
@@ -118,7 +127,7 @@ class CardViewListingCat extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                            text: " Easy",
+                            text: jbLevel,
                             style: Theme.of(context).textTheme.headline6!.copyWith(
                                   color: Colors.black54,
                                   fontSize: 16,
@@ -135,7 +144,7 @@ class CardViewListingCat extends StatelessWidget {
                   children: [
                     const Spacer(),
                     Text(
-                      "256 kcal",
+                      calData,
                       style: Theme.of(context).textTheme.bodyText2!.copyWith(
                             color: sTextColor,
                             fontSize: 16,

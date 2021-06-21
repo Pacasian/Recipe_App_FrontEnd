@@ -23,6 +23,7 @@ class RecommendCarView extends StatelessWidget {
     return Container(
       height: 150,
       child: Card(
+        elevation: 0,
         child: Row(
           children: [
             Container(
